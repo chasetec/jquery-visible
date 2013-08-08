@@ -10,13 +10,15 @@
 	 *		 the user visible viewport of a web browser.
 	 *		 only accounts for vertical position, not horizontal.
 	 */
-	$.fn.visible = function(partial,hidden){
+	$.fn.visible = function(partial,hidden,viewPortPadding){
 		
 	    var $t				= $(this).eq(0),
 	    	t				= $t.get(0),
 	    	$w				= $(window),
-	    	viewTop			= $w.scrollTop(),
-	    	viewBottom		= viewTop + $w.height(),
+	    	topPadding		= viewPortPadding ? viewPortPadding.top ? viewPortPadding.top : 0 : 0;
+	    	bottomPadding		= viewPortPadding ? viewPortPadding.bottom ? viewPortPadding.bottom : 0 : 0;
+	    	viewTop			= $w.scrollTop() + topPadding,
+	    	viewBottom		= viewTop + $w.height() - topPadding - bottomPadding,
 	    	_top			= $t.offset().top,
 	    	_bottom			= _top + $t.height(),
 	    	compareTop		= partial === true ? _bottom : _top,
