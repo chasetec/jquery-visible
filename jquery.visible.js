@@ -15,8 +15,8 @@
 	    var $t				= $(this).eq(0),
 	    	t				= $t.get(0),
 	    	$w				= $(window),
-	    	topPadding		= viewPortPadding ? viewPortPadding.top ? viewPortPadding.top : 0 : 0;
-	    	bottomPadding		= viewPortPadding ? viewPortPadding.bottom ? viewPortPadding.bottom : 0 : 0;
+	    	topPadding		= viewPortPadding ? viewPortPadding.top ? viewPortPadding.top : 0 : 0,
+	    	bottomPadding		= viewPortPadding ? viewPortPadding.bottom ? viewPortPadding.bottom : 0 : 0,
 	    	viewTop			= $w.scrollTop() + topPadding,
 	    	viewBottom		= viewTop + $w.height() - topPadding - bottomPadding,
 	    	_top			= $t.offset().top,
